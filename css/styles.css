@@ -16,5 +16,5 @@ img {
 }
 
 .gallery-item:hover {
-  cursor: url("../images/cursor.svg"), pointer;
+  cursor: url(../images/cursor.svg), pointer;
 }
