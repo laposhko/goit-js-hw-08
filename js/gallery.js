@@ -67,9 +67,8 @@ const images = [
 const gallery = document.querySelector(".gallery");
 const galleryContent = images
   .map(
-    //href="large-image.jpg" to a
     (img) => `<li class="gallery-item">
-    <a class="gallery-link" >
+    <a class="gallery-link" href="${img.original}">
     <img
       class="gallery-image"
       src="${img.preview}"
@@ -83,7 +82,11 @@ const galleryContent = images
 gallery.insertAdjacentHTML("beforeend", galleryContent);
 
 gallery.addEventListener("click", (event) => {
-  if (event.target.tagName == "IMG") {
+  event.preventDefault();
+  if (
+    event.target.tagName == "IMG" &&
+    event.target.classList.contains("gallery-image")
+  ) {
     const originalImage = event.target.getAttribute("data-source");
     basicLightbox.create(`<img src ='${originalImage}'>`).show();
   }

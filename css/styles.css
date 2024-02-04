@@ -15,6 +15,6 @@ img {
   margin-bottom: 20px;
 }
 
-.gallery-item:hover {
+.gallery-link:hover {
   cursor: url(../images/cursor.svg), pointer;
 }
